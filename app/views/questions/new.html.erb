@@ -1,0 +1,16 @@
+<h2>New Question Form</h2>
+
+<% if flash[:error] %>
+<%= flash[:error] %>
+<% end %>
+
+<%= form_for(@question) do |f| %>
+    <%= f.label :title, 'Title' %> </br>
+    <%= f.text_field :title %>
+  </br>
+    <%= f.label :description, 'Description' %> </br>
+    <%= f.text_field :description %>
+    <input type="submit" name="submit" value="submit">
+<% end %>
+
+<%= link_to 'Back', questions_path %>

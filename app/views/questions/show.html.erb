@@ -1,0 +1,24 @@
+<h2>Question Details</h2>
+
+<p>
+  <strong>Question:</strong>
+  <%= @question.title %>
+
+  <%if @question.description%>
+    -- <%= @question.description %>
+  <%end%>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %> | 
+<%= link_to 'Delete', question_path(@question), method: :delete %>
+
+</br>
+</br>
+<%= render "./answers/form" %>
+
+</br>
+</br>
+<% @answers.reverse.each do |answer| %>
+<li><%= answer.description %></li></br>
+<% end %>
